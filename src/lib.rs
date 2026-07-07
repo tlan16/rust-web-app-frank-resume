@@ -340,11 +340,20 @@ fn wrap(text: &str, max_chars: usize) -> Vec<String> {
 impl App {
     fn resize_to_window(&mut self) {
         let w = window();
-        let width = w.inner_width().unwrap().as_f64().unwrap() as u32;
-        let height = w.inner_height().unwrap().as_f64().unwrap() as u32;
-        self.canvas.set_width(width);
-        self.canvas.set_height(height);
-        self.fb.resize(width, height);
+        let dpr = w.device_pixel_ratio();                    // e.g. 2.0
+        let css_w = w.inner_width().unwrap().as_f64().unwrap();
+        let css_h = w.inner_height().unwrap().as_f64().unwrap();
+        let px_w = (css_w * dpr) as u32;
+        let px_h = (css_h * dpr) as u32;
+
+        self.canvas.set_width(px_w);
+        self.canvas.set_height(px_h);
+        // CSS size stays in logical pixels so layout is correct
+        let style = self.canvas.style();
+        style.set_property("width",  &format!("{css_w}px")).unwrap();
+        style.set_property("height", &format!("{css_h}px")).unwrap();
+
+        self.fb.resize(px_w, px_h);
     }
 
     // ----- pixel primitives -----
