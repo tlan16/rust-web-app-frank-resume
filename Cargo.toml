@@ -1,0 +1,29 @@
+[package]
+name = "rust-web-app-frank-resume"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+font8x8 = "0.3"
+
+[dependencies.web-sys]
+version = "0.3"
+features = [
+	"Window",
+	"Document",
+	"Element",
+	"EventTarget",
+	"HtmlCanvasElement",
+	"CanvasRenderingContext2d",
+	"ImageData",
+	"KeyboardEvent",
+	"WheelEvent",
+]
+
+[profile.release]
+opt-level = 3
+lto = true
