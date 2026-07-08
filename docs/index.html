@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Frank Lan</title>
-    <style>
-      html, body { margin: 0; height: 100%; overflow: hidden; }
-      canvas { display: block; }
-    </style>
-  <link rel="modulepreload" href="./rust-web-app-frank-resume-1ff89c158b4ac64f.js" crossorigin="anonymous" integrity="sha384-vleUmXsGg1L/BH5nDDBzX7aIdUNBrJ6hFm3VybozTQ2TIrEBWGRlK4ZM5I51dyQJ"><link rel="preload" href="./rust-web-app-frank-resume-1ff89c158b4ac64f_bg.wasm" crossorigin="anonymous" integrity="sha384-OZzAQLA+lANXQeHXiXnO3Sw12Ls+bvHbAANKzGLcDJW9MYId6vEz6tjZcPKta6+J" as="fetch" type="application/wasm"></head>
-  <body>
-    <canvas id="canvas"></canvas>
-  
+<head>
+  <meta charset="utf-8" />
+  <title>Frank Lan — Resume</title>
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #14161c; }
+    canvas { display: block; }
+  </style>
+<link rel="modulepreload" href="./rust-web-app-frank-resume-1ba9a6a20b73ce97.js" crossorigin="anonymous" integrity="sha384-IUoBrq0Icr5fse50EvUvkbZ6J9Qr+Bgd/sGXv8HKHPicJXOkIyTBlOl/CF2ndVlZ"><link rel="preload" href="./rust-web-app-frank-resume-1ba9a6a20b73ce97_bg.wasm" crossorigin="anonymous" integrity="sha384-Ys7/ciydENakrW/nWARBdFHK+nv4ceDPGU9qlvlOfKyI5TRrocZ7DgMLRcgjTk+C" as="fetch" type="application/wasm"></head>
+<body>
+<canvas id="canvas"></canvas>
+
 <script type="module">
-import init, * as bindings from './rust-web-app-frank-resume-1ff89c158b4ac64f.js';
-const wasm = await init({ module_or_path: './rust-web-app-frank-resume-1ff89c158b4ac64f_bg.wasm' });
+import init, * as bindings from './rust-web-app-frank-resume-1ba9a6a20b73ce97.js';
+const wasm = await init({ module_or_path: './rust-web-app-frank-resume-1ba9a6a20b73ce97_bg.wasm' });
 
 
 window.wasmBindings = bindings;
@@ -23,4 +23,3 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
 
 </script></body>
 </html>
-

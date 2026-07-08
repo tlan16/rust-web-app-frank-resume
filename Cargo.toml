@@ -1,30 +1,16 @@
 [package]
 name = "rust-web-app-frank-resume"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
-[lib]
-crate-type = ["cdylib", "rlib"]
+# Bevy is a binary app now — remove the old [lib] crate-type = ["cdylib"] section.
 
 [dependencies]
-wasm-bindgen = "0.2"
-font8x8 = "0.3"
+bevy = "0.15"
+getrandom = { version = "0.3", features = ["wasm_js"] }
 
-[dependencies.web-sys]
-version = "0.3"
-features = [
-	"Window",
-	"Document",
-	"Element",
-	"HtmlElement",
-	"CssStyleDeclaration",
-	"HtmlCanvasElement",
-	"CanvasRenderingContext2d",
-	"ImageData",
-	"KeyboardEvent",
-	"WheelEvent",
-]
-
+# Smaller/faster wasm in release (optional but recommended):
 [profile.release]
-opt-level = 3
+opt-level = "z"
 lto = true
+codegen-units = 1
