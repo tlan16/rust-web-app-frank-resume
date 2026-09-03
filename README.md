@@ -1,4 +1,4 @@
-Demo: https://tlan16.github.io/rust-web-app-frank-resume/
+Demo: https://tlan16.github.io/rust-web-app-frank-resume
 
 ```shell
 cargo install trunk
